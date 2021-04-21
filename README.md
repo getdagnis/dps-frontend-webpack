@@ -1,8 +1,6 @@
-# webpack-sass-test
+# dps-frontend-test
 
-- webpack & sass skills test
-- npm run build to start
-- Sun March 21 — Mon March 22, 2021
-
-
-### N.B.! Date input custom styling currently only supported by Google Chrome.
+- npm install
+- "npm run build" to start or "npm run build:watch" to develop
+- open dist\index.html in your browser (with Live Server extension to watch changes)
+- Sun Apr 19 — Mon April 22, 2021
