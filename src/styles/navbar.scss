@@ -13,6 +13,10 @@
     height: 110px;
   }
 
+  @media (max-width: 480px) {
+    height: 90px;
+  }
+
   & .container {
     display: flex;
     align-items: center;
@@ -29,9 +33,10 @@
     background-size: contain;
     cursor: pointer;
 
-    // @media (max-width: 768px) {
-    //   width: 180px;
-    // }
+    @media (max-width: 480px) {
+      min-width: 120px;
+      margin-left: 5px;
+    }
   }
 
   &__right {
@@ -129,9 +134,15 @@
       width: 20vw;
       padding: 5px 0;
       font-size: var(--fontSizeMedium);
+      color: var(--fontColorMedium);
       font-weight: 300;
       cursor: text;
       outline: none;
+      transition: color 0.3s ease;
+
+      &:focus {
+        color: white;
+      }
 
       &::after {
         content: "";
@@ -141,6 +152,7 @@
         height: 2.5px;
         width: 100%;
         background-color: var(--dpsGreen);
+        transition: background-color 0.3s ease;
       }
 
       & .search-icon {
@@ -178,12 +190,15 @@
 
   & .hamburger-holder {
     display: none;
+    transform: scale(0.5);
 
     @media (max-width: 768px) {
       display: block;
       padding: 22px 5px;
       cursor: pointer;
       margin-right: 10px;
+      transform: scale(0.9);
+      transition: all 0.3s ease;
 
       &:hover > .hamburger-icon {
         background: var(--dpsGreen);
@@ -193,6 +208,11 @@
           background: var(--dpsGreen);
         }
       }
+    }
+
+    @media (max-width: 480px) {
+      transform: scale(0.7);
+      margin-right: 0;
     }
   }
 
