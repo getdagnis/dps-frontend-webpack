@@ -33,7 +33,7 @@
       left: 0;
       width: 60px;
       height: 100%;
-      background: url("../assets/home-white.svg") var(--fontColorMedium);
+      background: url("../assets/home-white.svg") var(--dpsMediumGrey);
       background-position: center center;
       background-repeat: no-repeat;
       background-size: 40%;
@@ -42,8 +42,8 @@
 
       @media (max-width: 480px) {
         width: 100%;
-        height: 50px;
-        background-size: 8%;
+        height: 45px;
+        background-size: 7%;
         border-radius: var(--borderRadius) var(--borderRadius) 0 0;
       }
     }
@@ -109,6 +109,7 @@
       justify-content: flex-end;
       color: var(--fontColorMedium);
       padding-right: 20px;
+      transition: color 0.3s ease;
       cursor: pointer;
 
       & span {
@@ -117,6 +118,10 @@
 
       & .user-icon-edit {
         background-image: url("../assets/edit.svg");
+      }
+
+      &:hover {
+        color: var(--fontColorDark);
       }
 
       @media (max-width: 480px) {
@@ -145,31 +150,36 @@
 
 .dps-dashboard__portfolio {
   display: flex;
+  flex-direction: column;
   position: relative;
   margin-right: 12px;
   min-height: 50vh;
+  padding: 24px;
   background: var(--dpsLightGrey);
   border-radius: var(--borderRadius);
 
   &__head {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-left: 20px;
-    font-size: var(--titleSizeLarge);
-    color: white;
-    height: calc(var(--headerSize) / 2);
-    box-sizing: border-box;
-    background-color: var(--dpsBlue);
-    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
-    border-bottom: 5px solid var(--dpsGreen);
   }
 
+  // &__head {
+  //   position: absolute;
+  //   display: flex;
+  //   align-items: center;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 7vh;
+  //   padding-left: 20px;
+  //   font-size: var(--titleSizeLarge);
+  //   color: white;
+  //   box-sizing: border-box;
+  //   background-color: var(--dpsBlue);
+  //   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  //   border-bottom: 5px solid var(--dpsGreen);
+  // }
+
   &__main {
-    padding: calc(var(--headerSize) / 2 + 25px) 20px 40px;
+    color: black;
   }
 
   @media (max-width: 1024px) {
@@ -185,6 +195,16 @@
   background: var(--dpsLightGrey);
   border-radius: var(--borderRadius);
 
+  &__payment-flex {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @media screen and (max-width: 1024px) and (min-width: 769px) {
+      flex-direction: row;
+    }
+  }
+
   &__payment-status {
     display: flex;
     justify-content: space-between;
@@ -192,11 +212,19 @@
     padding: 12px;
     box-sizing: border-box;
     color: white;
-    background: var(--redWarning);
     border-radius: var(--borderRadius);
 
     &__sum {
       font-weight: 600;
+    }
+
+    &.status-red {
+      background: var(--redWarning);
+    }
+
+    &.status-green {
+      justify-content: center;
+      background: var(--greenOk);
     }
   }
 
@@ -209,16 +237,23 @@
     box-sizing: border-box;
     color: var(--fontColorDark);
     background: white;
+    border: 1px solid #eeeeee;
     border-radius: var(--borderRadius);
-    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.02);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.02);
     transform: translateY(0px);
     transition: all 0.3s ease;
     cursor: pointer;
 
     &:hover {
-      box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.06);
+      border: 1px solid #cccccc;
+      box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.06);
       transform: translateY(-1px) scale(1.01);
       transition: all 0.3s ease;
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 769px) {
+      margin: 0 0 0 12px;
+      flex-direction: row;
     }
   }
 
@@ -226,8 +261,10 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    color: var(--fontColorMedium);
     padding: 6px;
+    margin-top: 6px;
+    box-sizing: border-box;
+    color: var(--fontColorMedium);
     cursor: pointer;
 
     & > * {

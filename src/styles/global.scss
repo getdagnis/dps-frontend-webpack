@@ -3,14 +3,16 @@
 :root {
   --dpsBlue: #102b54;
   --dpsGreen: #80c7c6;
+
+  --dpsMediumGrey: #bbc5ca;
   --dpsLightGrey: #f6f6f6;
 
   --redWarning: #fd3b60;
   --greenOk: #69be58;
 
   --fontColorLight: #ffffff;
-  --fontColorMedium: #b4c5cf;
-  --fontColorDark: #102b54;
+  --fontColorMedium: #a1adb4;
+  --fontColorDark: #142e57;
 
   --fontSizeSmall: 15px;
   --fontSizeMedium: 17px;
@@ -25,8 +27,8 @@
   --borderRadius: 5px;
 }
 
-$mobileScreen: 650px;
-$smallScreen: 900px;
+$screenSizeSmall: 480px;
+$screenSizeMedium: 1024px;
 
 .font-color-light {
   color: var(--fontColorLight);
@@ -59,7 +61,7 @@ body {
 
 .container {
   width: 95vw;
-  max-width: 1220px;
+  max-width: 1280px;
 }
 
 h1 {
@@ -87,6 +89,10 @@ p {
   line-height: 1.5;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .dps-icon,
 .search-icon {
   display: inline-block;
@@ -99,8 +105,8 @@ p {
 }
 
 .dropdown-icon {
-  height: 10px;
-  width: 16px;
-  margin-left: 4px;
+  height: 9px;
+  width: 15px;
+  margin-left: 6px;
   background: url("../assets/arrow-down.svg") center center no-repeat;
 }
